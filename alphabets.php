@@ -49,7 +49,7 @@ for($j=1;$j<=10;$j++)
         }
        else
        {
-           echo " ";
+           echo "  ";
        }
     }
     echo "\n";
@@ -72,43 +72,98 @@ for($i=1;$i<=10;$i++)
     echo "\n";
 }
 
-// php program to print
-// alphabet A pattern
+echo "------------------- E ------------------ \n";
 
-// Function to display
-// alphabet pattern
-// function display($n)
-// {
-	
-// 	// Outer for loop for
-// 	// number of lines
-// 	for ($i = 0; $i < $n; $i++)
-// 	{
+for($j=1;$j<=10;$j++)
 
-// 		// Inner for loop for
-// 		// logic execution
-// 		for ($j = 0; $j <= floor($n / 2); $j++)
-// 		{
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1  || $j==10  || $j==1 || $j==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo " ";
+       }
+    }
+    echo "\n";
+}
 
-// 			// prints two column lines
-// 			// print first line of alphabet
-// 			// prints middle line		
-// 			if (($j == 0 || $j == floor($n / 2)) &&
-// 				$i != 0 || $i == 0 && $j != 0 &&
-// 				$j != floor($n / 2) ||
-				
-// 				$i == floor($n / 2))
-// 				echo "*";
-// 			else
-// 				echo " ";
-// 		}
+echo "------------------- F ------------------ \n";
 
-// 		echo "\n";
-// 	}
-// }
-// // Driver Function
-// $n=7;
-// display($n);
+for($j=1;$j<=10;$j++)
 
-// // This code is contributed by mits
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1    || $j==1 || $j==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo " ";
+       }
+    }
+    echo "\n";
+}
 
+echo "------------------- G ------------------ \n";
+
+for($i=1;$i<=10;$i++)
+
+{
+    for($j=1;$j<=10;$j++)
+    {
+        if($i==1 && $j!=1 && $j!=10 || $j==1 && $i!=1 && $i!=10 || $i==10 && $j!=1 && $j!=10 || $i==5 && $j!=1 && $j!=2 && $j!=3 && $j!=4 && $j!=5 
+        || $j==10 && $i!=1 && $i!=2 && $i!=3 && $i!=4 && $i!=5 && $i!=10)
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "  ";
+       }
+    }
+    echo "\n";
+}
+
+
+echo "------------------- H ------------------ \n";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1    || $i==10 || $j==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "  ";
+       }
+    }
+    echo "\n";
+}
+echo "------------------- I ------------------ \n";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($j==1    || $j==10 || $i==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "  ";
+       }
+    }
+    echo "\n";
+}
