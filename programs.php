@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
     $n=$_POST['input'];
 
 
-echo "------------------ <br>"; 
+echo "--------- rombus for $n. --------- <br>"; 
 for($i=1;$i<=$n;$i++)
 {
     for($k=$n;$k>=$i;$k--)
