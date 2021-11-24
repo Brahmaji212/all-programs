@@ -6,126 +6,130 @@
 
 // if( (0 == $year % 4) and (0 != $year % 100) or (0 == $year % 400) )  
 // {
-//     echo "$year is leap year\n";
+//     echo "$year is leap year<br>";
 // }
 // else
 // {
-//     echo "$year is not leap year\n";
+//     echo "$year is not leap year<br>";
 // }
 // }
 // programm for right angle triangle
-echo "------------------ \n";
-for($i=1;$i<=5;$i++)
+if(isset($_POST['submit'])){
+    $n=$_POST['input'];
+
+
+echo "------------------ <br>"; 
+for($i=1;$i<=$n;$i++)
 {
-    for($k=5;$k>=$i;$k--)
+    for($k=$n;$k>=$i;$k--)
     {
-        echo " ";
+        echo "&nbsp; ";
     }
     for($j=1;$j<=$i;$j++)
     {
-        echo "* ";
+        echo "* &nbsp;";
     } 
-    echo "\n";
+     echo "<br>";
 }
-for($i=5;$i>=1;$i--)
+for($i=$n;$i>=1;$i--)
 {
-   for($k=5;$k>=$i;$k--)
+   for($k=$n;$k>=$i;$k--)
     {
-        echo " ";
+        echo "&nbsp; ";
     }
    for($j=1;$j<=$i;$j++)
    {
-    echo "* ";
+    echo "* &nbsp;";
        
    }
-   echo "\n";
+   echo "<br>";
 }
-echo "------------------ \n";
-echo "------------------ \n";
-for($i=1;$i<=5;$i++)
+echo "------------------ <br>";
+echo "------------------ <br>";
+for($i=1;$i<=$n;$i++)
 {
-    for($k=5;$k>=$i;$k--)
+    for($k=$n;$k>=$i;$k--)
     {
-        echo " ";
+        echo "&nbsp; ";
     }
-    for($j=1;$j<=5;$j++)
+    for($j=1;$j<=$n;$j++)
     {
-        echo "$j ";
+        echo "$j &nbsp;";
     }
-    echo "\n";
+    echo "<br>";
 }
-for($i=1;$i<=5;$i++)
+for($i=1;$i<=$n;$i++)
 {
     for($k=1;$k<=$i;$k++)
     {
-        echo " ";
+        echo "&nbsp; ";
     }
-    for($j=1;$j<=5;$j++)
+    for($j=1;$j<=$n;$j++)
     {
-        echo "$j ";
+        echo "$j &nbsp;";
     }
-    echo "\n";
+    echo "<br>";
 }
-echo "------------------ \n";
+echo "------------------ <br>";
 
-echo "------------------ \n";
-for($i=1;$i<=5;$i++)
+echo "------------------ <br>";
+for($i=1;$i<=$n;$i++)
 {
-    for($k=5;$k>=$i;$k--)
+    for($k=$n;$k>=$i;$k--)
     {
-        echo " ";
+        echo "&nbsp; ";
     }
     for($j=1;$j<=$i;$j++)
     {
-        echo "* ";
+        echo "* &nbsp;";
     } 
-    echo "\n";
+    echo "<br>";
 }
-for($i=1;$i<=5;$i++)
+for($i=1;$i<=$n;$i++)
 {
     
-        echo " ";
+        echo "&nbsp; ";
    
-    for($j=1;$j<=5;$j++)
+    for($j=1;$j<=$n;$j++)
     {
-        echo "* ";
+        echo "* &nbsp;";
     }
-    echo "\n";
+    echo "<br>";
 }
-echo "------------------ \n";
-echo "------------------ \n";
-for($i=1;$i<=5;$i++)
+echo "------------------ <br>";
+echo "------------------ <br>";
+for($i=1;$i<=$n;$i++)
 {
-    for($j=5;$j>=$i;$j--)
+    for($j=$n;$j>=$i;$j--)
     {
         echo "$j ";
     }
-    echo "\n";
+    echo "<br>";
 }
-for($i=5;$i>=1;$i--)
+for($i=$n;$i>=1;$i--)
 {
-    for($j=5;$j>=$i;$j--)
+    for($j=$n;$j>=$i;$j--)
     {
         echo "$j ";
     }
     
-    echo "\n";
+    echo "<br>";
 }
 
-echo "---------Factorial--------- \n";
+echo "---------Factorial using for loop--------- <br>";
 
 $fact=1;
-for($n=5;$n>=1;$n--)
+for($num=$n;$num>=1;$num--)
 {
-    $fact=$fact*$n;
+    $fact=$fact*$num;
 }
-echo "$fact \n";
+echo "$fact <br>";
 
 
-echo "--------Factorial using recursion---------- \n";
+echo "--------Factorial using recursion---------- <br>";
 
 
-$i=6;
+
 function fact($n)
 {
     if($n<=1)
@@ -139,8 +143,8 @@ function fact($n)
     }
     
 }
-echo "Factorial of $i is " .fact($i);
-
+echo "Factorial of $n is " .fact($n);
+}
 ?>
 
 
@@ -149,7 +153,7 @@ echo "Factorial of $i is " .fact($i);
         <title>programs</title>
     </head>
     <body>
-        <form action="" method="get">
+        <form action="programs.php" method="post">
             <input type="number" name="input" id="input">
             <input type="submit" name="submit" id="submit">
         </form>
