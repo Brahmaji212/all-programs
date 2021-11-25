@@ -3,30 +3,63 @@
         <title>programs</title>
         <style>
             .content{
-                background-color: whitesmoke;
+                background-color: burlywood;
                 padding-left: 650px;
-                padding-top: 250px;
+                padding-top: 50px;
 
             }
             input#input{
-                background-color: lightblue;
+                background-color: transparent;
                 padding-bottom: 10px;
                 padding-top: 10px;
                 padding-left: 10px;
                 padding-right: 10px;
+                border-color: green;
+                border-radius: 5px;
+                
                 
             }
             input#input1
             {
+                border-color: green;
                 padding-top: 10px;
                 padding-bottom: 10px;
                 padding-left: 10px;
                 padding-right: 10px;
-
-                background-color: lightblue;
+                border-radius: 5px;
+                background-color: transparent;
                 
             }
+            label{
+                color: green;
+                align-self: center;
+                font-size: 20px solid ;
+                font-weight: 700;
+            }
+            input#submit{
+                color: white;
+                background-color: blue;
+                
+            }
+            button
+            {
+                background-color: red;
+                color: white;
+            }
+            .buttons
+            {
+                padding-left: 40px;
+            }
+            div.programs
+            {
+                display: block;
+                background-color: black;
+                color: white;
+                padding-left: 20px;
+               
+            }
             
+       
         </style>
     </head>
     <body>
@@ -36,16 +69,17 @@
             <input type="text" name="input" id="input"><br><br>
             <label for="letter">Enter Alphabet to print </label><br>
             <input type="text" name="input1" id="input1"><br><br>
+            <div class="buttons">
             <input type="submit" name="submit" id="submit">
             <button type="submit" value="clear" name="clear" onclick="myfun();">clear </button>
-            
+            </div>
         </form>
         </div>
     </body>
 </html>
 
 
-<div id=programs> 
+
 <?php
 // programm for leap year
 // $year=1999;
@@ -63,6 +97,7 @@
 // }
 // programm for right angle triangle
 if(isset($_POST['submit'])){
+    echo '<div id=programs class="programs"> ';
     $n=$_POST['input'];
     $char=$_POST['input1'];
 
@@ -192,12 +227,12 @@ function fact($n)
     }
     
 }
-echo "Factorial of $n is " .fact($n);
+echo "Factorial of $n is " .fact($n)."<br><br><br>";
 
 
 
 echo "------------------- ALPHABETS ------------------ <br>";
-if($char == 'A'){
+if($char == 'A' ){
 
 echo "------------------- A ------------------ <br>";
 
@@ -468,10 +503,53 @@ for($i=1;$i<=11;$i++)
     echo "<br>";
 }
 }
-}
+
+if($char == 'N'){
+    echo "------------------- N ------------------ <br>";
+    
+    for($i=1;$i<=11;$i++)
+    
+    {
+        for($j=1;$j<=11;$j++)
+        {
+            if($j==1 || $j==11 ||  $i==2 && $j==2 || $i==3 && $j==3 || $i==4 && $j==4 || $i==5 && $j==5
+            || $i==6 && $j==6 || $i==7 && $j==7 || $i==8 && $j==8 || $i==9 && $j==9 || $i==10 && $j==10)
+            {
+                echo "* ";
+            }
+           else
+           {
+               echo "&nbsp;&nbsp;&nbsp;";
+           }
+        }
+        echo "<br>";
+    }
+    }
+    if($char == 'O'){
+        echo "------------------- O ------------------ <br>";
+        
+        for($j=1;$j<=10;$j++)
+        
+        {
+            for($i=1;$i<=10;$i++)
+            {
+                if($i==1 && $j!=1 && $j!=10 || $j==10 && $i!=1 && $i!=10 || $j==1 && $i!=1 && $i!=10 || $i==10 && $j!=1 && $j!=10)
+                {
+                    echo "* ";
+                }
+               else
+               {
+                   echo "&nbsp;&nbsp;&nbsp;";
+               }
+            }
+            echo "<br>";
+        }
+        }
+        echo '</div>';
+    }
 
 ?>
-</div>
+
 
 
 <script>
