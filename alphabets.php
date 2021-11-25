@@ -289,7 +289,7 @@ else{
 
 $rem=0;
 $sum=0;
-$n=12121;
+for($n=0;$n<=1000;$n++){}
 $num=$n;
 while(floor($num) )
 {
