@@ -15,9 +15,7 @@ while($num > 0)
 }
 if($n == $sum)
 {
-    echo "\n $n is Armstrong number \n";
+    echo "\n $n is Armstrong number ";
 }
-// else{
-//     echo "\n $n is not Armstrong Number \n";
-// }
+
 }
