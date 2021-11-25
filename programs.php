@@ -58,7 +58,13 @@
                 padding-left: 20px;
                
             }
-            
+           div.error
+           {
+               color: red;
+               padding-left: 620px;
+               background-color: whitesmoke;
+               font-weight: 700;
+           } 
        
         </style>
     </head>
@@ -96,10 +102,19 @@
 // }
 // }
 // programm for right angle triangle
-if(isset($_POST['submit'])){
+
+if(isset($_POST['input'])== ' ' && isset($_POST['input1'])== ' ' && isset($_POST['submit'] )== true)
+{
+    echo '<div class="error">';
+    echo " PLEASE &nbsp; ENTER &nbsp; ANY &nbsp; INPUT";
+    echo '</div>';
+}
+
+
+if(isset($_POST['submit']) && $_POST['input'] == true){
     echo '<div id=programs class="programs"> ';
     $n=$_POST['input'];
-    $char=$_POST['input1'];
+    
 
 
 echo "--------- rombus for $n. --------- <br>"; 
@@ -228,8 +243,14 @@ function fact($n)
     
 }
 echo "Factorial of $n is " .fact($n)."<br><br><br>";
+echo '</div>';
+}
 
+// Alphabets page started
 
+if(isset($_POST['submit']) && $_POST['input1'] == true){
+    echo '<div class="programs">';
+    $char=$_POST['input1'];
 
 echo "------------------- ALPHABETS ------------------ <br>";
 if($char == 'A' ){
@@ -545,6 +566,27 @@ if($char == 'N'){
             echo "<br>";
         }
         }
+
+        if($char == 'P'){
+            echo "------------------- P ------------------ <br>";
+            
+            for($i=1;$i<=10;$i++)
+            
+            {
+                for($j=1;$j<=10;$j++)
+                {
+                    if($j==1 || $i==1 && $j<=6|| $j==7 && $i<=5 && $i!=1 || $i==6 && $j<=6)
+                    {
+                        echo "* ";
+                    }
+                   else
+                   {
+                       echo "&nbsp;&nbsp;&nbsp;";
+                   }
+                }
+                echo "<br>";
+            }
+            }
         echo '</div>';
     }
 
