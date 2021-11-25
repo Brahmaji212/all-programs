@@ -65,6 +65,11 @@
                background-color: whitesmoke;
                font-weight: 700;
            } 
+           div.devide
+           {
+               color: white;
+               background-color:  grey;
+           }
        
         </style>
     </head>
@@ -72,11 +77,11 @@
         <div class="content">
         <form action="programs.php" method="post">
             <label for="num">number for pattern programs</label> <br>
-            <input type="text" name="input" id="input"><br><br>
+            <input type="text" name="input" id="input" autocomplete="off"><br><br>
             <label for="letter">Enter Alphabet to print </label><br>
-            <input type="text" name="input1" id="input1"><br><br>
+            <input type="text" name="input1" id="input1" autocomplete="off"><br><br>
             <div class="buttons">
-            <input type="submit" name="submit" id="submit">
+            <input type="submit" name="submit" id="submit" onclick="myfun1();">
             <button type="submit" value="clear" name="clear" onclick="myfun();">clear </button>
             </div>
         </form>
@@ -103,7 +108,7 @@
 // }
 // programm for right angle triangle
 
-if(isset($_POST['input'])== ' ' && isset($_POST['input1'])== ' ' && isset($_POST['submit'] )== true)
+if(isset($_POST['submit']) == true && $_POST['input'] == '  ')
 {
     echo '<div class="error">';
     echo " PLEASE &nbsp; ENTER &nbsp; ANY &nbsp; INPUT";
@@ -114,10 +119,10 @@ if(isset($_POST['input'])== ' ' && isset($_POST['input1'])== ' ' && isset($_POST
 if(isset($_POST['submit']) && $_POST['input'] == true){
     echo '<div id=programs class="programs"> ';
     $n=$_POST['input'];
-    
 
+    if($n <=90){
+        echo "--------- rombus for $n. --------- <br>"; 
 
-echo "--------- rombus for $n. --------- <br>"; 
 for($i=1;$i<=$n;$i++)
 {
     for($k=$n;$k>=$i;$k--)
@@ -243,16 +248,116 @@ function fact($n)
     
 }
 echo "Factorial of $n is " .fact($n)."<br><br><br>";
+
+
+echo "--------------Fibonacci series of &nbsp; $n-------------------- <br> <br>";
+
+$n1=0;
+$n2=1;
+if($n<=1 || $n>1)
+{
+    echo $n1." ".$n2;
+}
+for($i=1;$i<=$n;$i++)
+{
+    $n3=$n1+$n2;
+    
+    echo " ".$n3;
+    $n1=$n2;
+    $n2=$n3;
+}
+echo "<br>";
+
+
+echo " <br>--------------perl series of &nbsp; $n-------------------- <br> <br>";
+
+$n1=0;
+$n2=1;
+$n3=2;
+if($n<=2 || $n>2)
+{
+    echo $n1." ".$n2." ".$n3;
+}
+for($i=1;$i<=$n;$i++)
+{
+    $n4=$n1+$n2+$n3;
+    
+    echo " ".$n4;
+    $n1=$n2;
+    $n2=$n3;
+    $n3=$n4;
+}
+echo "<br>";
+    }
+
+echo "------------- Armstrong Number --------- <br>";
+
+$rem=0;
+$sum=0;
+$num=$n;
+
+while($num > 0)
+{
+    $rem=$num%10;
+    $sum=$sum+$rem*$rem*$rem;
+    $num=$num/10;
+}
+if($n == $sum)
+{
+    echo "$n is Armstrong number <br><br>";
+}
+else{
+    echo "$n is not Armstrong Number <br>";
+}
+
+echo "<br> ---------Palindrome using loop --------<br>";
+
+$rem=0;
+$sum=0;
+$num=$n;
+while(floor($num) )
+{
+    $rem=$num%10;
+    $sum=$sum*10+$rem;
+    $num=$num/10;   
+}
+if($n == $sum)
+{
+    echo "<br> $n is palindrome <br>";
+}
+else{
+    echo "<br> $n is not palindrome <br>";
+}
+
+echo "<br> ---------Palindrome using reverse string -------- <br>";
+
+$rev=strrev($num);
+if($n == $rev)
+{
+    echo "<br> $n is palindrome <br>";
+}
+else{
+    echo "<br> $n is not palindrome <br>";
+    
+}
+
+
 echo '</div>';
+    
 }
 
 // Alphabets page started
 
 if(isset($_POST['submit']) && $_POST['input1'] == true){
+
+    echo '<div class="devide">';
+    echo "<br><br>";
+    echo '</div>';
+
     echo '<div class="programs">';
     $char=$_POST['input1'];
 
-echo "------------------- ALPHABETS ------------------ <br>";
+echo "------------------- ALPHABETS ------------------ <br> <br>";
 if($char == 'A' ){
 
 echo "------------------- A ------------------ <br>";
@@ -587,6 +692,48 @@ if($char == 'N'){
                 echo "<br>";
             }
             }
+            if($char == 'Q'){
+                echo "------------------- Q ------------------ <br>";
+                
+                for($i=1;$i<=10;$i++)
+                
+                {
+                    for($j=1;$j<=10;$j++)
+                    {
+                        if($j==1 && $i!=1 && $i<=7 || $i==1 && $j!=1 && $j!=10 || $j==10 && $i!=1 && $i<=7 || $i==8 && $j!=1 && $j!=10 || $j==7 && $i==9 || $j==8 && $i==10)
+                        {
+                            echo "* ";
+                        }
+                       else
+                       {
+                           echo "&nbsp;&nbsp;&nbsp;";
+                       }
+                    }
+                    echo "<br>";
+                }
+
+                echo " programm for printing Q <br>";
+                echo '
+                <pre>
+                for($i=1;$i<=10;$i++) 
+                
+                { 
+                    for($j=1;$j<=10;$j++)
+                    {
+                        if($j==1 && $i!=1 && $i<=7 || $i==1 && $j!=1 && $j!=10 || $j==10 && $i!=1 && $i<=7 || $i==8 && $j!=1 && $j!=10 || $j==7 && $i==9 || $j==8 && $i==10)
+                        {
+                            echo "* ";
+                        }
+                       else
+                       {
+                           echo "&nbsp;&nbsp;&nbsp;";
+                       }
+                    }
+                    echo "\n";
+                } 
+                </pre>
+                ';
+                }    
         echo '</div>';
     }
 
@@ -595,8 +742,15 @@ if($char == 'N'){
 
 
 <script>
+    function myfun1(){
+    var x= document.getElementById("input");
+    document.getElementById("input").innerHTML= x;
+    $var1 = document.getElementById("input1");
+    document.getElementById("input").innerHTML= $var1;
+    }
     function myfun()
     {
+        
         document.getElementById("programs").innerHTML = ' ';
         // window('href: programs.php');
         

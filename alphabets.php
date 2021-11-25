@@ -246,6 +246,7 @@ for($i=1;$i<=11;$i++)
     }
     echo "\n";
 }
+
 for($i=1;$i<=11;$i++)
 
 {
@@ -262,4 +263,55 @@ for($i=1;$i<=11;$i++)
        }
     }
     echo "\n";
+}
+
+echo "------------- Armstrong Number ---------";
+
+$rem=0;
+$sum=0;
+$n=151;
+$num=$n;
+
+while($num > 0)
+{
+    $rem=$num%10;
+    $sum=$sum+$rem*$rem*$rem;
+    $num=$num/10;
+}
+if($n == $sum)
+{
+    echo "\n $n is Armstrong number \n";
+}
+else{
+    echo "\n $n is not Armstrong Number \n";
+}
+
+
+$rem=0;
+$sum=0;
+$n=12121;
+$num=$n;
+while(floor($num) )
+{
+    $rem=$num%10;
+    $sum=$sum*10+$rem;
+    $num=$num/10;   
+}
+if($n == $sum)
+{
+    echo "\n $sum is palindrome \n";
+}
+else{
+    echo "\n $sum is not palindrome \n";
+    
+}
+$num=1010;
+$rev=strrev($num);
+if($num == $rev)
+{
+    echo "\n $num is palindrome \n";
+}
+else{
+    echo "\n $num is not palindrome \n";
+    
 }
