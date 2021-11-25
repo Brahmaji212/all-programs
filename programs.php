@@ -1,3 +1,51 @@
+<html>
+    <head>
+        <title>programs</title>
+        <style>
+            .content{
+                background-color: whitesmoke;
+                padding-left: 650px;
+                padding-top: 250px;
+
+            }
+            input#input{
+                background-color: lightblue;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                
+            }
+            input#input1
+            {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                background-color: lightblue;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="content">
+        <form action="programs.php" method="post">
+            <label for="num">number for pattern programs</label> <br>
+            <input type="text" name="input" id="input"><br><br>
+            <label for="letter">Enter Alphabet to print </label><br>
+            <input type="text" name="input1" id="input1"><br><br>
+            <input type="submit" name="submit" id="submit">
+            <button type="submit" value="clear" name="clear" onclick="myfun();">clear </button>
+            
+        </form>
+        </div>
+    </body>
+</html>
+
+
+<div id=programs> 
 <?php
 // programm for leap year
 // $year=1999;
@@ -16,6 +64,7 @@
 // programm for right angle triangle
 if(isset($_POST['submit'])){
     $n=$_POST['input'];
+    $char=$_POST['input1'];
 
 
 echo "--------- rombus for $n. --------- <br>"; 
@@ -144,18 +193,292 @@ function fact($n)
     
 }
 echo "Factorial of $n is " .fact($n);
+
+
+
+echo "------------------- ALPHABETS ------------------ <br>";
+if($char == 'A'){
+
+echo "------------------- A ------------------ <br>";
+
+for($i=1;$i<=10;$i++)
+{
+    for($j=1;$j<=10;$j++)
+    {
+        if(($i==1 && $j!=1 && $j!=10) || ($j==1 && $i!=1) || $j==10 && $i!=1 || $i==5)
+        {
+            echo "* ";
+        }
+        else
+        {
+            echo "&nbsp;&nbsp;&nbsp;";
+        }
+       
+    }
+    echo "<br>";
+ }
 }
+
+if($char == 'B'){
+ echo "------------------- B ------------------ <br>";
+for($i=1;$i<=10;$i++)
+{
+    for($j=1;$j<=10;$j++)
+    {
+        if($i==1  && $j<=9 || $j==1 && $i<=10 || $i==5 && $j<=9 || $i==10 && $j<=9 || $j==10 && $i!=5 && $i!=1 && $i!=10)
+        {
+            echo "* ";
+        }
+        else{
+            echo "&nbsp;&nbsp;&nbsp;";
+        }
+        
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'C'){
+echo "------------------- C ------------------ <br>";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1 && $j!=1 && $j!=10 || $j==10 && $i!=1 || $j==1 && $i!=1 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'D'){
+echo "------------------- D ------------------ <br>";
+for($i=1;$i<=10;$i++)
+{
+    for($j=1;$j<=10;$j++)
+    {
+        if($i==1  && $j<=9 || $j==1 && $i<=10  || $i==10 && $j<=9 || $j==10 && $i!=1 && $i!=10)
+        {
+            echo "* ";
+        }
+        else{
+            echo "&nbsp;&nbsp;&nbsp;";
+        }
+        
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'E'){
+echo "------------------- E ------------------ <br>";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1  || $j==10  || $j==1 || $j==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'F'){
+echo "------------------- F ------------------ <br>";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1    || $j==1 || $j==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'G'){
+echo "------------------- G ------------------ <br>";
+
+for($i=1;$i<=10;$i++)
+
+{
+    for($j=1;$j<=10;$j++)
+    {
+        if($i==1 && $j!=1 && $j!=10 || $j==1 && $i!=1 && $i!=10 || $i==10 && $j!=1 && $j!=10 || $i==5 && $j!=1 && $j!=2 && $j!=3 && $j!=4 && $j!=5 
+        || $j==10 && $i!=1 && $i!=2 && $i!=3 && $i!=4 && $i!=5 && $i!=10)
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'H'){
+echo "------------------- H ------------------ <br>";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1    || $i==10 || $j==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+if($char == 'I'){
+echo "------------------- I ------------------ <br>";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($j==1    || $j==10 || $i==5 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'J'){
+echo "------------------- J ------------------ <br>";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($j==1 && $i<=7 && $i!=1  || $j==10 && $i<=6 && $i!=1 || $i==7 && $j!=10 || $j==9 && $i==2)
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'K'){
+echo "------------------- K ------------------ <br>";
+
+for($i=1;$i<=10;$i++)
+
+{
+    for($j=1;$j<=10;$j++)
+    {
+        if($j==1  || $j==10 && $i==1 || $j==10 && $i==10 || $j==9 && $i==9  || $j==9 && $i==2 || $j==8 && $i==3 || $j==7 && $i==4 || $j==6 && $i==5
+        || $j==8 && $i==8 || $j==7 && $i==7 || $j==6 && $i==6 ||  $i==5 && $j<=5)
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'L'){
+echo "------------------- L ------------------ <br>";
+
+for($j=1;$j<=10;$j++)
+
+{
+    for($i=1;$i<=10;$i++)
+    {
+        if($i==1 || $j==10 )
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+
+if($char == 'M'){
+echo "------------------- M ------------------ <br>";
+
+for($i=1;$i<=11;$i++)
+
+{
+    for($j=1;$j<=11;$j++)
+    {
+        if($j==11 && $i!=1 && $i<=7|| $j==1 && $i!=1 && $i<=7 || $i==1 && $j!=11 && $j!=1  && $j!=6 ||
+        $i==2 && $j==6 || $i==3 && $j==6)
+        {
+            echo "* ";
+        }
+       else
+       {
+           echo "&nbsp;&nbsp;&nbsp;";
+       }
+    }
+    echo "<br>";
+}
+}
+}
+
 ?>
+</div>
 
 
-<html>
-    <head>
-        <title>programs</title>
-    </head>
-    <body>
-        <form action="programs.php" method="post">
-            <input type="number" name="input" id="input">
-            <input type="submit" name="submit" id="submit">
-        </form>
-    </body>
-</html>
+<script>
+    function myfun()
+    {
+        document.getElementById("programs").innerHTML = ' ';
+        // window('href: programs.php');
+        
+    }
+</script>
