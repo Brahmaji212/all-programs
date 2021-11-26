@@ -296,12 +296,24 @@ $rem=0;
 $sum=0;
 $num=$n;
 
+
+if($num < 999 ){
 while($num > 0)
 {
+    
     $rem=$num%10;
-    $sum=$sum+$rem*$rem*$rem || $sum+$rem*$rem*$rem*$rem;
+    $sum=$sum+$rem*$rem*$rem;
     $num=$num/10;
 }
+}    
+ else  if($num > 999 ){
+    while($num > 0){  
+    $rem=$num%10;
+        $sum=$sum+$rem*$rem*$rem*$rem;
+        $num=$num/10;
+        }
+}
+
 if($n == $sum)
 {
     echo "$n is Armstrong number <br><br>";
