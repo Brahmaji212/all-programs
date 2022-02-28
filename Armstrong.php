@@ -18,6 +18,7 @@ while($num > 0)
 if($n == $sum)
 {
     echo "\n $n is Armstrong number  \n";
+    echo " this is main master";
 }
 
 }
